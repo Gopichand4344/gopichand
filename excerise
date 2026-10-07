@@ -1,0 +1,33 @@
+package com.example.tipcalculator;
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+
+public class TipCalculatorApp extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        // Instantiate the View/Controller layout
+        TipCalculatorView layout = new TipCalculatorView();
+        
+        // Configure grid properties
+        layout.setAlignment(Pos.CENTER);
+        layout.setHgap(10);
+        layout.setVgap(15);
+        layout.setPadding(new Insets(20, 20, 20, 20));
+
+        // Create the scene and apply it to the stage
+        Scene scene = new Scene(layout, 350, 300);
+        primaryStage.setTitle("Tip Calculator");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
